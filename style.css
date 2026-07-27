@@ -1,122 +1,271 @@
-/* Reset global */
+/* ==========================
+   Reset
+========================== */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
 }
 
-/* Base */
+/* ==========================
+   Variáveis
+========================== */
+
+:root {
+    --background: #f6f6f6;
+    --surface: #ffffff;
+    --text: #202122;
+    --border: #a2a9b1;
+    --link: #0645ad;
+}
+
+/* ==========================
+   Base
+========================== */
 
 html {
+    font-size: 87.5%;
     scroll-behavior: smooth;
-
-    background-color: #F7F9FA;
-
-    font-size: 87%;
-
 }
 
 body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+}
 
-    background-color: #FFFFFF;
+/* ==========================
+   Layout Geral
+========================== */
 
-    width: 82%;
+header,
+main,
+footer {
+    width: min(95%, 960px);
 
     margin: auto;
+
+    background: var(--surface);
+}
+
+/* ==========================
+   Header
+========================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 2rem;
+
+    border-bottom: 1px solid var(--border);
+}
+
+header img {
+    width: 100px;
+    height: auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 1rem;
+
+    list-style: none;
+}
+
+nav a {
+    color: var(--link);
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================
+   Main
+========================== */
+
+main {
+    padding: 2rem;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
+/* Todos os filhos diretos do main ficam centralizados */
 
-/* Header */
-
-header {
-
+main > * {
     width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-
-    padding: 1em 5em;
-
-    align-items: center;
-
+    max-width: 75ch;
 }
 
-header h1 {
+/* Espaçamento das seções */
 
-    font-family: 'Linux Libertine', 'Georgia', 'Times', 'Source Serif Pro', serif;
-    font-size: 2rem;
+section {
+    margin-bottom: 3rem;
+}
+
+article {
+    margin-bottom: 2rem;
+}
+
+/* ==========================
+   Tipografia
+========================== */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family:
+            "Linux Libertine",
+            Georgia,
+            "Times New Roman",
+            serif;
+
     font-weight: normal;
-
+    line-height: 1.2;
 }
 
-header img {
+h1 {
+    font-size: 2.5rem;
+
+    margin-bottom: 2rem;
+    padding-bottom: .3rem;
+
+    border-bottom: 1px solid var(--border);
+}
+
+h2 {
+    font-size: 2rem;
+
+    margin: 2rem 0 1rem;
+    padding-bottom: .2rem;
+
+    border-bottom: 1px solid #ddd;
+}
+
+h3 {
+    font-size: 1.5rem;
+
+    margin: 1.5rem 0 .8rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+
+    margin: 1.2rem 0 .6rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* ==========================
+   Imagens
+========================== */
+
+figure {
+    width: fit-content;
+
+    margin: 2rem auto;
+
+    padding: .5rem;
+
+    background: #f8f9fa;
+    border: 1px solid var(--border);
+}
+
+figure img {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+}
+
+figcaption {
+    margin-top: .5rem;
+
+    text-align: center;
+    font-size: .9rem;
+    color: #666;
+}
+
+/* Caso use apenas <img> */
+
+main img {
+    display: block;
 
     max-width: 100%;
     height: auto;
 
+    margin: 2rem auto;
+
+    border: 1px solid var(--border);
+    padding: .4rem;
+    background: #f8f9fa;
 }
 
-header nav ul {
+/* ==========================
+   Links
+========================== */
 
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
+a {
+    color: var(--link);
+}
 
-    list-style: none;
+a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================
+   Footer
+========================== */
+
+footer {
+    padding: 1rem 2rem;
+
+    border-top: 1px solid var(--border);
+    
+    font-size: .9rem;
+    color: #666;
 
 }
 
-header nav ul li {
+footer p + p {
+    margin-top: .5rem;
+}
 
+footer p {
     text-align: center;
-
 }
 
-header nav ul li a {
+/* ==========================
+   Responsividade
+========================== */
 
-    text-align: center;
+@media (max-width: 700px) {
 
-    text-decoration: none;
-}
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
 
-/* Main */
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
-main {
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 1rem;
-    padding: 1em 5em;
-
-    width: 60%;
-    box-sizing: border-box;
-
-    align-items: center;
-
-}
-
-main h2 {
-
-    font-family: 'Linux Libertine', 'Georgia', 'Times', 'Source Serif Pro', serif;
-    font-size: 2rem;
-    font-weight: normal;
+    header,
+    main,
+    footer {
+        padding: 1.5rem;
+    }
 
 }
-
-main h3 {
-
-    font-family: 'Linux Libertine', 'Georgia', 'Times', 'Source Serif Pro', serif;
-    font-size: 1.5rem;
-    font-weight: normal;
-
-}
-
-/* Footer */

@@ -108,9 +108,15 @@ main h2 {
     font-family: 'Linux Libertine', 'Georgia', 'Times', 'Source Serif Pro', serif;
     font-size: 2rem;
     font-weight: normal;
-    
+
 }
 
-main
+main h3 {
+
+    font-family: 'Linux Libertine', 'Georgia', 'Times', 'Source Serif Pro', serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+
+}
 
 /* Footer */

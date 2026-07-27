@@ -14,13 +14,14 @@ html {
 
     background-color: #F7F9FA;
 
+    font-size: 87%;
 
 }
 
 body {
     background-color: #FFFFFF;
 
-    width: 83%;
+    width: 82%;
 
     margin: auto;
 
@@ -34,6 +35,10 @@ header {
     display: flex;
     justify-content: space-between;
 
+    padding: 1em 5em;
+
+    align-items: center;
+
 }
 
 header img {
@@ -46,7 +51,8 @@ header img {
 header nav ul {
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 1rem;
 
     list-style: none;
 
@@ -56,8 +62,13 @@ header nav ul li {
 
     text-align: center;
 
-    margin: 2em;
+}
 
+header nav ul li a {
+
+    text-align: center;
+
+    text-decoration: none;
 }
 
 /* Main */
